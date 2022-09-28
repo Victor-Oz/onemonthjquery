@@ -1,6 +1,11 @@
 /** @format */
 $(".question").click(function () {
-    $(this).next().slideToggle("fast");
+    $(this).next().animate({
+        width: [ "toggle", "" ],
+        height: [ "toggle", "swing" ],
+        opacity: "toggle"
+      }, 300, "linear", function() {
+      });
     $(this).children().toggleClass("collapse");
 
 });
@@ -14,3 +19,5 @@ $(".question").click(function () {
 //     // Animation complete.
 //   });
 // });
+
+   $(this).next().slideToggle("fast");
